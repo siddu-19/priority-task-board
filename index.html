@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Priority Task Board</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+<body>
+    <h1 id="main-heading">
+        Task Board
+        <span>Your personal priority list</span>
+      </h1>
+      
+    <!-- <h1>🗂️ Priority Task Board</h1> -->
+    <br><br>
+    <div class="board">
+      <!-- Inbox section: input + column -->
+      <div class="inbox-section">
+        <div id="input-section">
+          <input type="text" id="task-input" placeholder="Enter a task..." />
+          <button id="add-btn">Add</button>
+        </div>
+        <button id="clear-btn">🧹 Clear All</button>
+        <div class="column" id="inbox" ondragover="allowDrop(event)" ondrop="drop(event)">
+          <h2>Tasks</h2>
+        </div>
+      </div>
+  
+      <!-- Other columns -->
+      <div class="column" id="high" ondragover="allowDrop(event)" ondrop="drop(event)">
+        <h2>High Priority</h2>
+      </div>
+      <div class="column" id="medium" ondragover="allowDrop(event)" ondrop="drop(event)">
+        <h2>Medium Priority</h2>
+      </div>
+      <div class="column" id="low" ondragover="allowDrop(event)" ondrop="drop(event)">
+        <h2>Low Priority</h2>
+      </div>
+    </div>
+  
+    <script src="script.js"></script>
+  </body>
+  
+</html>
