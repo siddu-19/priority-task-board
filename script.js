@@ -1,4 +1,4 @@
-// Add task on button click or Enter key
+// Adding tasks
 document.getElementById("add-btn").addEventListener("click", addTask);
 document.getElementById("task-input").addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
@@ -115,29 +115,29 @@ function loadTasksFromStorage() {
     // Set background based on column from localStorage
     switch (column) {
       case "high":
-        task.style.background = "#ffcdd2"; // Light red
+        task.style.background = "#ffcdd2"; 
         break;
       case "medium":
-        task.style.background = "#fff9c4"; // Light yellow
+        task.style.background = "#fff9c4"; 
         break;
       case "low":
-        task.style.background = "#c8e6c9"; // Light green
+        task.style.background = "#c8e6c9";
         break;
       default:
-        task.style.background = "#99ddee"; // Inbox default color
+        task.style.background = "#99ddee";
     }
 
     document.getElementById(column).appendChild(task);
   });
 }
 
-// Clear all tasks on button click
+// Clears all tasks
 document.getElementById("clear-btn").addEventListener("click", () => {
   const columns = ["inbox", "high", "medium", "low"];
   columns.forEach((col) => {
     const column = document.getElementById(col);
     const tasks = column.querySelectorAll(".task");
-    tasks.forEach(task => task.remove()); // ✅ Only removes tasks
+    tasks.forEach(task => task.remove()); 
   }); 
   localStorage.removeItem("tasks");
 });
